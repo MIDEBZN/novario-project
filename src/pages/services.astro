@@ -1,0 +1,527 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CostEstimator from '../components/CostEstimator.astro';
+
+const servicesList = [
+  {
+    id: "depannage",
+    title: "Dépannage Plomberie d'Urgence 24/7",
+    tagline: "Sécurisation sous 35 à 50 minutes à Bruxelles et en Wallonie",
+    description: "Une fuite d'eau non maîtrisée ou une canalisation rompue cause des dégâts considérables en quelques minutes. Notre équipe d'astreinte intervient jour et nuit avec un véhicule équipé pour stopper immédiatement le sinistre et remplacer les pièces défectueuses.",
+    points: [
+      "Intervention d'urgence de jour comme de nuit (24h/24 et 7j/7)",
+      "Réparation express de conduites en cuivre, PER, multicouche et acier",
+      "Remplacement immédiat de robinets d'arrêt généraux bloqués ou fuyards",
+      "Sécurisation des compteurs et vannes de purge Vivaqua, SWDE ou CILE",
+      "Forfait annoncé à l'avance sans majoration dissimulée"
+    ],
+    pricing: "À partir de 95 € HTVA (déplacement et première heure de main d'œuvre)",
+    image: "/images/hero-craftsmanship.jpg"
+  },
+  {
+    id: "recherche-fuite",
+    title: "Recherche de Fuite Non Destructive",
+    tagline: "Localisation millimétrique agréée toutes assurances belges",
+    description: "Infiltration dans un mur, tache d'humidité au plafond ou surconsommation anormale sur votre compteur d'eau ? Nos techniciens localisent précisément l'origine du sinistre sans endommager vos revêtements grâce à des technologies acoustiques et thermographiques de pointe.",
+    points: [
+      "Caméra thermique infrarouge haute résolution",
+      "Détection acoustique par corrélation électronique et géophone",
+      "Injection de gaz traceur inoffensif pour canalisations encastrées",
+      "Inspection vidéo endoscopique pour conduits sanitaires",
+      "Rapport photographique complet certifié pour indemnisation par votre assurance"
+    ],
+    pricing: "À partir de 240 € HTVA (souvent remboursé intégralement par l'assurance habitation)",
+    image: "/images/sanitary-renovation.jpg"
+  },
+  {
+    id: "debouchage",
+    title: "Débouchage & Hydrocurage Haute Pression",
+    tagline: "Dégorgement complet de canalisations et stérilisation",
+    description: "Écoulement ralenti, reflux d'eau sale ou odeurs nauséabondes ? Nous réalisons un curage mécanique ou hydrodynamique puissant pour restaurer le diamètre initial de vos tuyaux sans utiliser de produits chimiques corrosifs dangereux pour l'environnement.",
+    points: [
+      "Hydrocurage hydrodynamique pulsé jusqu'à 200 bars de pression",
+      "Débouchage mécanique par furet motorisé et tête rotative",
+      "Débouchage de colonnes montantes d'immeubles et sterputs extérieurs",
+      "Passage de caméra d'inspection pour vérifier l'état des parois",
+      "Nettoyage préventif et désincrustation des dépôts de tartre"
+    ],
+    pricing: "À partir de 130 € HTVA selon le diamètre et l'accessibilité",
+    image: null
+  },
+  {
+    id: "chauffage",
+    title: "Chauffage, Chaudières & Entretien PEB",
+    tagline: "Agrément officiel Cerga et conformité régionale Wallonie / Bruxelles",
+    description: "Le contrôle périodique de votre chaudière est légalement obligatoire en Belgique (tous les deux ans pour le gaz, chaque année pour le mazout). Novario Project prend en charge l'entretien complet, le nettoyage du corps de chauffe, la vérification du tirage et la délivrance de l'attestation PEB officielle.",
+    points: [
+      "Entretien chaudière gaz et mazout avec attestation PEB légale",
+      "Habilitation Cerga pour les raccordements et tuyauteries de gaz",
+      "Désembouage hydrodynamique des radiateurs et planchers chauffants",
+      "Remplacement de circulateurs, vases d'expansion et thermostats connectés",
+      "Dépannage express en cas de mise en sécurité ou défaut de flamme"
+    ],
+    pricing: "À partir de 145 € HTVA avec rapport de combustion et attestation PEB",
+    image: "/images/heating-installation.jpg"
+  },
+  {
+    id: "chauffe-eau",
+    title: "Remplacement & Entretien Chauffe-Eau / Boiler",
+    tagline: "Eau chaude continue et réduction de votre facture d'électricité",
+    description: "Votre boiler fuit, fait disjoncter votre tableau électrique ou ne produit plus d'eau chaude ? Nous installons des ballons d'eau chaude haute efficacité énergétique, verticaux ou horizontaux, ainsi que des chauffe-eau thermodynamiques de nouvelle génération.",
+    points: [
+      "Installation de boilers électriques ou thermodynamiques (100L à 300L)",
+      "Partenariats fabricants officiels: Bulex, Vaillant, Ariston, ACV, Atlantic",
+      "Remplacement systématique du groupe de sécurité et du réducteur de pression",
+      "Détartrage en profondeur pour lutter contre la dureté de l'eau en Belgique",
+      "Garantie constructeur jusqu'à 5 ans sur la cuve"
+    ],
+    pricing: "À partir de 690 € HTVA (fourniture et pose comprise avec raccordement)",
+    image: null
+  },
+  {
+    id: "sanitaire",
+    title: "Rénovation Sanitaire & Salle de Bain Clé en Main",
+    tagline: "Conception architecturale et réalisation technique irréprochable",
+    description: "Modernisez votre salle de bain avec une étanchéité parfaite et des finitions durables. Nous gérons l'intégralité du chantier de plomberie: évacuations encastrées, arrivées d'eau sous collecteurs, pose de receveurs de douche ultra-plats et robinetteries design.",
+    points: [
+      "Douches à l'italienne avec natte d'étanchéité aux normes belges",
+      "Installation de WC suspendus Geberit autoportants",
+      "Robinetteries encastrées thermostatiques de grandes marques (Grohe, Hansgrohe)",
+      "Tuyauteries multicouche sous gaine isolante anti-condensation",
+      "Accompagnement de A à Z avec un interlocuteur technique unique"
+    ],
+    pricing: "Devis détaillé gratuit sous 48h après visite technique",
+    image: "/images/sanitary-renovation.jpg"
+  },
+  {
+    id: "adoucisseur",
+    title: "Traitement de l'Eau & Adoucisseurs Anti-Calcaire",
+    tagline: "Protection durable contre la forte dureté des eaux belges",
+    description: "En Région bruxelloise et dans la majorité des provinces wallonnes, la dureté de l'eau dépasse fréquemment 30 degrés français de calcaire. Ce calcaire use prématurément vos canalisations, vos résistances de boiler et votre électroménager. L'adoucisseur prolonge leur longévité de 10 ans.",
+    points: [
+      "Installation d'adoucisseurs d'eau compacts volumétriques sans perte de débit",
+      "Filtration des impuretés, sable et rouille à l'entrée du compteur",
+      "Préservation intégrale des sanitaires et réduction des dépôts blanchâtres",
+      "Mise en service avec analyse de dureté de l'eau (titre hydrotimétrique)",
+      "Contrat d'entretien annuel et livraison de pastilles de sel purifiées"
+    ],
+    pricing: "À partir de 1250 € HTVA tout compris (filtre, by-pass et raccordement)",
+    image: null
+  }
+];
+---
+
+<Layout
+  title="Services de Plomberie et Chauffage en Belgique"
+  description="Découvrez l'ensemble de nos services: Dépannage urgent 24/7, recherche de fuite non destructive, débouchage, entretien chaudière PEB et rénovation sanitaire à Bruxelles et Wallonie."
+  currentPath="/services"
+>
+  <!-- Page Header -->
+  <section class="page-intro technical-grid">
+    <div class="container">
+      <div class="page-intro-content">
+        <span class="badge badge-copper">Expertise Technique Certifiée</span>
+        <h1>Nos Services de Plomberie & Chauffage</h1>
+        <p class="page-intro-lead">
+          Interventions d'urgence sécurisées, maintenance préventive et réalisations sanitaires haut de gamme. Chaque intervention respecte scrupuleusement les normes belges NBN, l'habilitation Cerga et les réglementations régionales PEB.
+        </p>
+        <div class="quick-nav-pills">
+          <a href="#depannage" class="pill-link">Dépannage 24/7</a>
+          <a href="#recherche-fuite" class="pill-link">Recherche de Fuite</a>
+          <a href="#debouchage" class="pill-link">Débouchage</a>
+          <a href="#chauffage" class="pill-link">Chauffage PEB</a>
+          <a href="#chauffe-eau" class="pill-link">Chauffe-Eau</a>
+          <a href="#sanitaire" class="pill-link">Rénovation Sanitaire</a>
+          <a href="#adoucisseur" class="pill-link">Adoucisseurs</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Detailed Service Blocks -->
+  <section class="section">
+    <div class="container">
+      <div class="services-stacked">
+        {servicesList.map((srv, idx) => (
+          <article class="service-block" id={srv.id}>
+            <div class="service-block-header">
+              <div class="srv-badge-row">
+                <span class="srv-number">0{idx + 1}</span>
+                <span class="srv-tag">{srv.tagline}</span>
+              </div>
+              <h2 class="srv-title">{srv.title}</h2>
+              <p class="srv-desc">{srv.description}</p>
+            </div>
+
+            <div class="service-block-content">
+              <div class="srv-points-col">
+                <h3 class="srv-points-heading">Spécifications techniques de la prestation:</h3>
+                <ul class="srv-points-list">
+                  {srv.points.map((pt) => (
+                    <li>
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c2612d" stroke-width="2.2">
+                        <polyline points="20 6 9 17 4 12"/>
+                      </svg>
+                      <span>{pt}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <div class="srv-pricing-badge">
+                  <span class="pricing-label">Tarification de référence:</span>
+                  <span class="pricing-val">{srv.pricing}</span>
+                  <span class="pricing-note">Taux de TVA belge: 6% pour habitations de plus de 10 ans, 21% pour le neuf</span>
+                </div>
+
+                <div class="srv-cta-row">
+                  <a href="/contact" class="btn btn-primary btn-sm">Demander cette intervention</a>
+                  <a href="tel:+32470123456" class="btn btn-secondary btn-sm">Urgence immédiate</a>
+                </div>
+              </div>
+
+              {srv.image && (
+                <div class="srv-media-col">
+                  <img
+                    src={srv.image}
+                    alt={srv.title}
+                    width="600"
+                    height="350"
+                    loading="lazy"
+                    class="srv-img"
+                  />
+                </div>
+              )}
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Transparency Grid -->
+  <section class="section" style="background-color: var(--bg-secondary);">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="badge badge-copper">Clarté et Honnêteté</span>
+        <h2>Barème Tarifaire Indicatif en Belgique</h2>
+        <p>
+          Chez Novario Project, nous refusons les mauvaises surprises. Voici nos bases forfaitaires transparentes avant intervention.
+        </p>
+      </div>
+
+      <div class="pricing-table-card">
+        <div class="table-responsive">
+          <table class="tarifs-table">
+            <thead>
+              <tr>
+                <th>Type de Prestation</th>
+                <th>Délai Indicatif</th>
+                <th>Fourchette HTVA</th>
+                <th>TVA 6% (Plus de 10 ans)</th>
+                <th>Garantie Incluse</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Dépannage fuite d'eau standard</strong></td>
+                <td>35-50 min</td>
+                <td>95 € à 160 €</td>
+                <td>100,70 € à 169,60 €</td>
+                <td>2 ans pièces et pose</td>
+              </tr>
+              <tr>
+                <td><strong>Recherche de fuite thermique non destructive</strong></td>
+                <td>24h ou urgence</td>
+                <td>240 € à 360 €</td>
+                <td>254,40 € à 381,60 €</td>
+                <td>Rapport certifié assurance</td>
+              </tr>
+              <tr>
+                <td><strong>Débouchage haute pression (hydrocurage)</strong></td>
+                <td>Même jour</td>
+                <td>130 € à 210 €</td>
+                <td>137,80 € à 222,60 €</td>
+                <td>Contrôle caméra inclus</td>
+              </tr>
+              <tr>
+                <td><strong>Entretien chaudière gaz + attestation PEB</strong></td>
+                <td>Sur rendez-vous</td>
+                <td>145 € à 185 €</td>
+                <td>153,70 € à 196,10 €</td>
+                <td>Attestation légale Cerga</td>
+              </tr>
+              <tr>
+                <td><strong>Remplacement boiler électrique 150L</strong></td>
+                <td>24h à 48h</td>
+                <td>690 € à 980 €</td>
+                <td>731,40 € à 1 038,80 €</td>
+                <td>5 ans cuve constructeur</td>
+              </tr>
+              <tr>
+                <td><strong>Pose d'un adoucisseur d'eau volumétrique</strong></td>
+                <td>Sur devis</td>
+                <td>1 250 € à 1 850 €</td>
+                <td>1 325,00 € à 1 961,00 €</td>
+                <td>Mise en service et réglages</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="pricing-footer-note">
+          Les tarifs ci-dessus comprennent le déplacement standard en Région bruxelloise et dans le Brabant Wallon. Un devis écrit est obligatoirement signé par le client avant toute intervention dépassant 150 €.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Simulator Integration -->
+  <section class="section">
+    <div class="container">
+      <CostEstimator />
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .page-intro {
+    padding: 4.5rem 0 3.5rem;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .page-intro-content {
+    max-width: 820px;
+  }
+
+  .page-intro-content h1 {
+    color: #ffffff;
+    margin: 1rem 0;
+  }
+
+  .page-intro-lead {
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+  }
+
+  .quick-nav-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+  }
+
+  .pill-link {
+    display: inline-block;
+    padding: 0.45rem 0.9rem;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-medium);
+    border-radius: var(--radius-sm);
+    font-size: 0.85rem;
+    color: var(--text-main);
+    font-weight: 500;
+    transition: all var(--transition-fast);
+  }
+
+  .pill-link:hover {
+    background-color: var(--copper);
+    color: #ffffff;
+    border-color: var(--copper);
+  }
+
+  .services-stacked {
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+  }
+
+  .service-block {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-xl);
+    padding: 2.75rem;
+    transition: border-color var(--transition-fast);
+  }
+
+  .service-block:hover {
+    border-color: var(--border-copper);
+  }
+
+  .srv-badge-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .srv-number {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--copper-light);
+  }
+
+  .srv-tag {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+    font-weight: 600;
+  }
+
+  .srv-title {
+    color: #ffffff;
+    margin-bottom: 0.75rem;
+    font-size: 1.85rem;
+  }
+
+  .srv-desc {
+    font-size: 1.05rem;
+    max-width: 820px;
+    margin-bottom: 2rem;
+  }
+
+  .service-block-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  @media (min-width: 900px) {
+    .service-block-content:has(.srv-media-col) {
+      grid-template-columns: 1.3fr 1fr;
+      align-items: center;
+    }
+  }
+
+  .srv-points-heading {
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: #ffffff;
+    margin-bottom: 1rem;
+  }
+
+  .srv-points-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .srv-points-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.65rem;
+    font-size: 0.92rem;
+    color: var(--text-main);
+    line-height: 1.5;
+  }
+
+  .srv-points-list svg {
+    flex-shrink: 0;
+    margin-top: 3px;
+  }
+
+  .srv-pricing-badge {
+    background-color: var(--bg-tertiary);
+    border: 1px solid var(--border-medium);
+    border-radius: var(--radius-md);
+    padding: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .pricing-label {
+    display: block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: var(--text-subtle);
+    letter-spacing: 0.05em;
+    margin-bottom: 0.25rem;
+  }
+
+  .pricing-val {
+    display: block;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--copper-light);
+    margin-bottom: 0.25rem;
+  }
+
+  .pricing-note {
+    display: block;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+  }
+
+  .srv-cta-row {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .srv-media-col {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 1px solid var(--border-medium);
+  }
+
+  .srv-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Pricing Table */
+  .pricing-table-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-medium);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    padding: 1.5rem;
+  }
+
+  .table-responsive {
+    overflow-x: auto;
+  }
+
+  .tarifs-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+    text-align: left;
+  }
+
+  .tarifs-table th {
+    background-color: var(--bg-tertiary);
+    color: #ffffff;
+    font-weight: 700;
+    padding: 1.1rem 1rem;
+    border-bottom: 1px solid var(--border-medium);
+    font-size: 0.85rem;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+  }
+
+  .tarifs-table td {
+    padding: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    color: var(--text-main);
+  }
+
+  .tarifs-table tr:hover td {
+    background-color: rgba(255, 255, 255, 0.02);
+  }
+
+  .pricing-footer-note {
+    padding: 1.25rem 1rem 0;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+
+  @media (max-width: 768px) {
+    .service-block {
+      padding: 1.75rem;
+    }
+  }
+</style>

@@ -1,0 +1,354 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ZoneSearch from '../components/ZoneSearch.astro';
+
+const regionsData = [
+  {
+    name: "Région de Bruxelles-Capitale",
+    delay: "30 à 45 minutes",
+    baseLocation: "Permanence Ixelles / Centre",
+    distributor: "Vivaqua",
+    description: "Intervention rapide dans les 19 communes bruxelloises pour tous types de logements: maisons de maître, copropriétés, appartements récents et immeubles de bureaux.",
+    communes: [
+      "1000 Bruxelles (Centre, Pentagone, Quartier Européen)",
+      "1050 Ixelles (Flagey, Châtelain, Fernand Cocq)",
+      "1180 Uccle (Fort Jaco, Prince d'Orange, Calevoet)",
+      "1060 Saint-Gilles (Parvis, Porte de Hal, Louise)",
+      "1040 Etterbeek (Place Jourdan, Merode, La Chasse)",
+      "1150 Woluwe-Saint-Pierre (Montgomery, Stockel)",
+      "1200 Woluwe-Saint-Lambert (Roodebeek, Tomberg)",
+      "1030 Schaerbeek (Meiser, Parc Josaphat, Plasky)",
+      "1190 Forest (Altitude 100, Parc Duden)",
+      "1170 Watermael-Boitsfort (Wiener, Coin du Balai)",
+      "1160 Auderghem (Herrmann-Debroux, Rouge-Cloître)",
+      "1080 Molenbeek-Saint-Jean (Canal, Tour et Taxis)",
+      "1070 Anderlecht (Midi, Erasme, Veeweyde)",
+      "1090 Jette (Place Reine Astrid, Miroir)",
+      "1140 Evere, 1081 Koekelberg, 1082 Berchem, 1083 Ganshoren"
+    ]
+  },
+  {
+    name: "Province du Brabant Wallon",
+    delay: "30 à 45 minutes",
+    baseLocation: "Antenne Waterloo / Wavre",
+    distributor: "inBW / SWDE",
+    description: "Couverture intégrale du Brabant Wallon avec techniciens basés localement le long des axes R0 et E411.",
+    communes: [
+      "1410 Waterloo (Centre, Chenois, Mont-Saint-Jean)",
+      "1300 Wavre (Centre, Bierges, Limal)",
+      "1420 Braine-l'Alleud (Chenois, Paradis, Paudure)",
+      "1348 Ottignies-Louvain-la-Neuve (Lauzelle, Hocaille)",
+      "1400 Nivelles (Baulers, Maillebotte)",
+      "1330 Rixensart (Genval, Lac, Bourgeois)",
+      "1310 La Hulpe (Solvay, Centre)",
+      "1480 Tubize (Clabecq, Saintes)",
+      "1380 Lasne (Maransart, Ohain, Plancenoit)",
+      "1325 Chaumont-Gistoux (Dion-le-Mont)",
+      "1370 Jodoigne (Saint-Médard)",
+      "1470 Genappe (Baisy-Thy, Loupoigne)"
+    ]
+  },
+  {
+    name: "Province de Namur",
+    delay: "40 à 60 minutes",
+    baseLocation: "Permanence Namur",
+    distributor: "SWDE / INASEP",
+    description: "Dépannage d'urgence et travaux sanitaires au cœur de la capitale wallonne et dans tout le bassin mosan.",
+    communes: [
+      "5000 Namur (Centre-Ville, Salzinnes, Jambes)",
+      "5030 Gembloux (Sauvenière, Ernage)",
+      "5060 Sambreville (Tamines, Auvelais)",
+      "5300 Andenne (Seilles, Sclayn)",
+      "5100 Dave, Wépion, Naninne",
+      "5590 Ciney, 5020 Champion, 5380 Fernelmont"
+    ]
+  },
+  {
+    name: "Province de Liège",
+    delay: "45 à 60 minutes",
+    baseLocation: "Permanence Liège Guillemins",
+    distributor: "CILE / SWDE",
+    description: "Service de plomberie d'astreinte sur l'agglomération liégeoise et la vallée de la Meuse.",
+    communes: [
+      "4000 Liège (Centre, Guillemins, Saint-Léonard)",
+      "4020 Liège (Outremeuse, Bressoux, Amercoeur)",
+      "4100 Seraing (Ougrée, Boncelles, Jemeppe)",
+      "4053 Chaudfontaine (Embourg, Beaufays)",
+      "4040 Herstal, 4400 Flémalle",
+      "4800 Verviers, 4600 Visé, 4030 Grivegnée"
+    ]
+  },
+  {
+    name: "Province de Hainaut",
+    delay: "45 à 65 minutes",
+    baseLocation: "Permanence Mons / Charleroi",
+    distributor: "SWDE / IDEA",
+    description: "Interventions rapides sur les principaux pôles urbains du Hainaut pour l'urgence ou la rénovation.",
+    communes: [
+      "7000 Mons (Nimy, Hyon, Centre)",
+      "6000 Charleroi (Ville-Haute, Ville-Basse)",
+      "7100 La Louvière (Trivières, Saint-Vaast)",
+      "7500 Tournai (Kain, Froyennes)",
+      "6110 Montigny-le-Tilleul, 6040 Jumet, 6061 Montignies"
+    ]
+  }
+];
+---
+
+<Layout
+  title="Zones d'Intervention en Belgique - Bruxelles et Wallonie"
+  description="Consultez nos délais d'intervention et nos secteurs desservis en plomberie et chauffage: 19 communes de Bruxelles, Brabant Wallon, Namur, Liège et Hainaut."
+  currentPath="/locations"
+>
+  <!-- Page Header -->
+  <section class="page-intro technical-grid">
+    <div class="container">
+      <div class="page-intro-content">
+        <span class="badge badge-copper">Couverture Territoriale</span>
+        <h1>Zones d'Intervention en Belgique</h1>
+        <p class="page-intro-lead">
+          Des véhicules d'intervention répartis sur les axes névralgiques pour garantir une arrivée sous 35 à 50 minutes en cas de fuite d'eau critique ou de panne de chauffage.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Search / Filter -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="badge badge-live">Recherche Instantanée</span>
+        <h2>Trouvez Votre Commune ou Code Postal</h2>
+        <p>
+          Tapez simplement votre code postal belge pour visualiser immédiatement le temps d'intervention estimé.
+        </p>
+      </div>
+
+      <ZoneSearch />
+    </div>
+  </section>
+
+  <!-- Regional Breakdown Details -->
+  <section class="section" style="background-color: var(--bg-secondary);">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="badge badge-copper">Détail par Région et Province</span>
+        <h2>Secteurs d'Intervention Prioritaires</h2>
+        <p>
+          Organisation de nos équipes de garde et spécificités des réseaux de distribution d'eau potable.
+        </p>
+      </div>
+
+      <div class="regions-grid">
+        {regionsData.map((reg) => (
+          <div class="region-box">
+            <div class="reg-head">
+              <h3>{reg.name}</h3>
+              <div class="reg-tags">
+                <span class="badge badge-copper">Arrivée: {reg.delay}</span>
+                <span class="badge">Réseau: {reg.distributor}</span>
+              </div>
+            </div>
+
+            <p class="reg-desc">{reg.description}</p>
+            
+            <div class="reg-meta">
+              <span class="reg-meta-label">Point d'astreinte:</span>
+              <span class="reg-meta-val">{reg.baseLocation}</span>
+            </div>
+
+            <div class="reg-communes-section">
+              <span class="reg-communes-title">Principales communes desservies:</span>
+              <ul class="reg-communes-list">
+                {reg.communes.map((c) => (
+                  <li>{c}</li>
+                ))}
+              </ul>
+            </div>
+
+            <div class="reg-action">
+              <a href="/contact" class="btn btn-secondary btn-sm" style="width: 100%;">
+                Demander un technicien dans ce secteur
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Belgian Utilities Notice -->
+  <section class="section">
+    <div class="container">
+      <div class="utility-notice-card">
+        <div class="utility-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2">
+            <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+          </svg>
+        </div>
+        <div class="utility-content">
+          <h3>Coordination avec les Distributeurs d'Eau Belges</h3>
+          <p>
+            En cas de problème survenant en amont de votre compteur d'eau ou de rupture de canalisation sur le domaine public, nous vous assistons pour contacter rapidement votre gestionnaire de réseau d'eau: <strong>Vivaqua</strong> à Bruxelles (02 739 52 11), la <strong>SWDE</strong> en Région Wallonne (087 87 87 87), la <strong>CILE</strong> en région liégeoise (04 367 84 11) ou <strong>inBW</strong> dans le Brabant Wallon.
+          </p>
+          <p class="text-sm" style="margin-top: 0.5rem; color: var(--text-muted);">
+            Toute intervention située en aval du compteur d'eau privatif relève de la responsabilité du propriétaire et peut être prise en charge directement par Novario Project.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .page-intro {
+    padding: 4.5rem 0 3.5rem;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .page-intro-content {
+    max-width: 820px;
+  }
+
+  .page-intro-content h1 {
+    color: #ffffff;
+    margin: 1rem 0;
+  }
+
+  .page-intro-lead {
+    font-size: 1.15rem;
+    color: var(--text-muted);
+  }
+
+  .regions-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .region-box {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-xl);
+    padding: 2.25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all var(--transition-fast);
+  }
+
+  .region-box:hover {
+    border-color: var(--border-copper);
+    background-color: var(--bg-card-hover);
+  }
+
+  .reg-head {
+    margin-bottom: 1.25rem;
+  }
+
+  .reg-head h3 {
+    color: #ffffff;
+    font-size: 1.35rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .reg-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .reg-desc {
+    font-size: 0.92rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .reg-meta {
+    padding: 0.75rem 1rem;
+    background-color: var(--bg-tertiary);
+    border-radius: var(--radius-sm);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .reg-meta-label {
+    color: var(--text-subtle);
+  }
+
+  .reg-meta-val {
+    color: var(--text-main);
+    font-weight: 600;
+  }
+
+  .reg-communes-section {
+    margin-bottom: 1.75rem;
+  }
+
+  .reg-communes-title {
+    display: block;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-subtle);
+    margin-bottom: 0.6rem;
+  }
+
+  .reg-communes-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+
+  .reg-communes-list li::before {
+    content: "•";
+    color: var(--copper-light);
+    margin-right: 0.5rem;
+  }
+
+  .utility-notice-card {
+    background-color: var(--bg-card);
+    border: 1px solid rgba(2, 132, 199, 0.25);
+    border-radius: var(--radius-xl);
+    padding: 2.25rem;
+    display: flex;
+    gap: 1.75rem;
+    align-items: flex-start;
+  }
+
+  .utility-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: var(--radius-md);
+    background-color: var(--water-soft);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .utility-content h3 {
+    color: #ffffff;
+    font-size: 1.25rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .utility-content p {
+    font-size: 0.92rem;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 900px) {
+    .regions-grid {
+      grid-template-columns: 1fr;
+    }
+    .utility-notice-card {
+      flex-direction: column;
+    }
+  }
+</style>

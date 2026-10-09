@@ -1,0 +1,133 @@
+---
+interface FaqItem {
+  question: string;
+  answer: string;
+}
+
+const faqs: FaqItem[] = [
+  {
+    question: "Que faire en urgence en cas de fuite d'eau majeure avant l'arrivée du technicien ?",
+    answer: "Coupez sans attendre le robinet d'arrêt général situé près de votre compteur d'eau (compteur Vivaqua à Bruxelles, SWDE ou CILE en Wallonie). Si la fuite se situe à proximité de prises ou appareils électriques, coupez immédiatement le disjoncteur correspondant au tableau électrique. Ouvrez ensuite un robinet au point le plus bas du bâtiment pour purger la pression résiduelle, puis contactez notre permanence au +32 470 12 34 56."
+  },
+  {
+    question: "Comment se déroule la prise en charge par mon assurance habitation en Belgique ?",
+    answer: "En Belgique, la garantie 'dégâts des eaux' de votre assurance incendie couvre généralement la recherche de fuite non destructive ainsi que les dommages causés aux murs, plafonds et revêtements de sol. À l'issue de notre passage, Novario Project vous remet un rapport d'intervention technique complet accompagné de photos et d'une facture détaillée conforme aux exigences des compagnies belges (Ethias, AXA, AG Insurance, Belfius, CBC, etc.)."
+  },
+  {
+    question: "Comment bénéficier de la TVA réduite à 6% sur les travaux de plomberie ?",
+    answer: "Selon la réglementation fiscale belge, vous pouvez bénéficier d'un taux réduit de TVA à 6% (au lieu de 21%) si votre logement est utilisé principalement comme habitation privée et que sa première occupation remonte à plus de 10 ans. Une attestation fiscale simplifiée intégrée directement à notre devis et facture certifie ce statut auprès du SPF Finances."
+  },
+  {
+    question: "L'entretien de la chaudière est-il légalement obligatoire en Belgique ?",
+    answer: "Oui, la législation environnementale impose un contrôle périodique régulier: tous les deux ans pour les chaudières au gaz à Bruxelles et en Wallonie, et chaque année pour les chaudières au mazout. Nos chauffagistes sont habilités PEB et vous délivrent l'attestation légale de contrôle périodique et le rapport de combustion conformes."
+  },
+  {
+    question: "Quels sont vos délais d'intervention en cas de dépannage urgent ?",
+    answer: "Grâce à notre équipe d'astreinte mobile répartie stratégiquement sur la dorsale Bruxelles-Brabant Wallon, notre délai moyen constaté est de 30 à 45 minutes pour les 19 communes de Bruxelles et le Brabant Wallon. Pour les provinces de Namur, Liège et Hainaut, comptez entre 45 et 60 minutes selon la circulation."
+  },
+  {
+    question: "Les devis sont-ils gratuits et transparents ?",
+    answer: "Oui. Pour tout projet de rénovation, de remplacement de chaudière ou de chauffe-eau, nous établissons un devis écrit détaillé et gratuit sous 24 à 48 heures. Pour un dépannage urgent, le technicien effectue un diagnostic visuel à son arrivée et vous annonce le tarif forfaitaire avant d'engager la moindre réparation."
+  }
+];
+---
+
+<div class="faq-accordion-container" id="faqAccordion">
+  {faqs.map((item, index) => (
+    <details class="faq-item" id={`faq-${index}`}>
+      <summary class="faq-question">
+        <span class="faq-q-text">{item.question}</span>
+        <span class="faq-icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </span>
+      </summary>
+      <div class="faq-answer">
+        <p>{item.answer}</p>
+      </div>
+    </details>
+  ))}
+</div>
+
+<style>
+  .faq-accordion-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .faq-item {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    transition: all var(--transition-fast);
+  }
+
+  .faq-item[open] {
+    border-color: var(--border-copper);
+    background-color: var(--bg-secondary);
+  }
+
+  .faq-question {
+    list-style: none;
+    padding: 1.35rem 1.75rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #ffffff;
+    user-select: none;
+  }
+
+  .faq-question::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-q-text {
+    flex: 1;
+    line-height: 1.4;
+  }
+
+  .faq-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: var(--bg-tertiary);
+    color: var(--copper-light);
+    flex-shrink: 0;
+    transition: transform var(--transition-normal);
+  }
+
+  .faq-item[open] .faq-icon {
+    transform: rotate(180deg);
+    background-color: var(--copper);
+    color: #ffffff;
+  }
+
+  .faq-answer {
+    padding: 0 1.75rem 1.5rem;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
+    padding-top: 1rem;
+  }
+
+  @media (max-width: 600px) {
+    .faq-question {
+      padding: 1.1rem 1.25rem;
+      font-size: 0.95rem;
+    }
+    .faq-answer {
+      padding: 0 1.25rem 1.25rem;
+    }
+  }
+</style>

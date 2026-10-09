@@ -1,0 +1,291 @@
+---
+---
+
+<div class="contact-form-card" id="contactFormWrapper">
+  <form id="mainContactForm" class="contact-form" novalidate>
+    <div class="form-row-2">
+      <div class="form-group">
+        <label for="contactNom" class="form-label">Nom et Prénom *</label>
+        <input
+          type="text"
+          id="contactNom"
+          name="nom"
+          class="form-input"
+          placeholder="Ex: Alexandre Dubois"
+          required
+        />
+        <span class="field-error" id="errNom"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="contactTel" class="form-label">Numéro de Téléphone *</label>
+        <input
+          type="tel"
+          id="contactTel"
+          name="tel"
+          class="form-input"
+          placeholder="Ex: +32 470 12 34 56"
+          required
+        />
+        <span class="field-error" id="errTel"></span>
+      </div>
+    </div>
+
+    <div class="form-row-2">
+      <div class="form-group">
+        <label for="contactEmail" class="form-label">Adresse Courriel *</label>
+        <input
+          type="email"
+          id="contactEmail"
+          name="email"
+          class="form-input"
+          placeholder="Ex: alexandre@exemple.be"
+          required
+        />
+        <span class="field-error" id="errEmail"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="contactPostal" class="form-label">Code Postal et Commune en Belgique *</label>
+        <input
+          type="text"
+          id="contactPostal"
+          name="postal"
+          class="form-input"
+          placeholder="Ex: 1050 Ixelles ou 1410 Waterloo"
+          required
+        />
+        <span class="field-error" id="errPostal"></span>
+      </div>
+    </div>
+
+    <div class="form-row-2">
+      <div class="form-group">
+        <label for="contactIntervention" class="form-label">Type d'intervention requise *</label>
+        <select id="contactIntervention" name="intervention" class="form-select" required>
+          <option value="" disabled selected>Sélectionnez un service...</option>
+          <option value="urgence">Dépannage d'extrême urgence (fuite active, inondation)</option>
+          <option value="recherche-fuite">Recherche de fuite invisible par caméra thermique</option>
+          <option value="debouchage">Débouchage WC, évier ou colonne générale</option>
+          <option value="chaudiere">Entretien ou réparation chaudière gaz (agréé PEB)</option>
+          <option value="boiler">Remplacement chauffe-eau ou boiler</option>
+          <option value="renovation">Rénovation de salle de bain clé en main</option>
+          <option value="autre">Autre demande de plomberie générale</option>
+        </select>
+        <span class="field-error" id="errIntervention"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="contactBatiment" class="form-label">Ancienneté du bâtiment (TVA belge)</label>
+        <select id="contactBatiment" name="batiment" class="form-select">
+          <option value="plus-10">Bâtiment de plus de 10 ans (Taux réduit TVA 6%)</option>
+          <option value="moins-10">Bâtiment de moins de 10 ans (TVA 21%)</option>
+          <option value="professionnel">Immeuble commercial ou société</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="contactMessage" class="form-label">Description du problème ou de votre projet *</label>
+      <textarea
+        id="contactMessage"
+        name="message"
+        class="form-textarea"
+        placeholder="Précisez les symptômes constatés, les marques de vos équipements (Bulex, Vaillant, Geberit, Grohe...) ou vos contraintes d'horaires."
+        required
+      ></textarea>
+      <span class="field-error" id="errMessage"></span>
+    </div>
+
+    <div class="form-assurances-notice">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+      </svg>
+      <span>
+        Toutes nos interventions font l'objet d'un rapport technique écrit et d'une facture détaillée acceptée par toutes les compagnies d'assurance en Belgique (Ethias, AXA, AG Insurance, Belfius, etc.).
+      </span>
+    </div>
+
+    <button type="submit" id="submitBtn" class="btn btn-primary btn-lg" style="width: 100%; margin-top: 1.25rem;">
+      Envoyer ma demande d'intervention
+    </button>
+  </form>
+
+  <div id="formSuccessMessage" class="form-success-banner" style="display: none;">
+    <div class="success-icon-box">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5">
+        <polyline points="20 6 9 17 4 12"/>
+      </svg>
+    </div>
+    <h3 class="success-title">Demande transmise avec succès</h3>
+    <p class="success-desc">
+      Notre permanence technique a bien reçu vos informations. Un technicien qualifié va vous contacter par téléphone sous 15 minutes pour confirmer l'heure de passage ou préciser le devis.
+    </p>
+    <div class="success-callout">
+      En cas de fuite d'eau abondante non maîtrisée, fermez immédiatement votre vanne générale d'arrivée d'eau et contactez notre ligne d'astreinte directe au <strong>+32 470 12 34 56</strong>.
+    </div>
+    <button type="button" id="resetFormBtn" class="btn btn-secondary btn-sm" style="margin-top: 1.5rem;">
+      Soumettre une autre demande
+    </button>
+  </div>
+</div>
+
+<style>
+  .contact-form-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-medium);
+    border-radius: var(--radius-xl);
+    padding: 2.5rem;
+    box-shadow: var(--shadow-lg);
+  }
+
+  .form-row-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .field-error {
+    display: block;
+    font-size: 0.78rem;
+    color: #f87171;
+    margin-top: 0.35rem;
+    min-height: 1.1rem;
+  }
+
+  .form-assurances-notice {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 1rem;
+    background-color: rgba(16, 185, 129, 0.05);
+    border: 1px solid rgba(16, 185, 129, 0.2);
+    border-radius: var(--radius-md);
+    font-size: 0.85rem;
+    color: var(--text-main);
+    line-height: 1.5;
+  }
+
+  .form-assurances-notice svg {
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .form-success-banner {
+    padding: 3rem 2rem;
+    text-align: center;
+    background-color: rgba(16, 185, 129, 0.05);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    border-radius: var(--radius-lg);
+  }
+
+  .success-icon-box {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 1.5rem;
+    border-radius: 50%;
+    background-color: rgba(16, 185, 129, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .success-title {
+    font-size: 1.6rem;
+    color: #ffffff;
+    margin-bottom: 0.75rem;
+  }
+
+  .success-desc {
+    max-width: 580px;
+    margin: 0 auto 1.5rem;
+    color: var(--text-muted);
+  }
+
+  .success-callout {
+    max-width: 580px;
+    margin: 0 auto;
+    padding: 1rem;
+    background-color: rgba(220, 38, 38, 0.08);
+    border: 1px solid rgba(220, 38, 38, 0.25);
+    border-radius: var(--radius-md);
+    font-size: 0.85rem;
+    color: #fca5a5;
+  }
+
+  @media (max-width: 768px) {
+    .contact-form-card {
+      padding: 1.75rem;
+    }
+    .form-row-2 {
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+  }
+</style>
+
+<script>
+  function setupContactForm() {
+    const form = document.getElementById('mainContactForm') as HTMLFormElement | null;
+    const successMsg = document.getElementById('formSuccessMessage');
+    const resetBtn = document.getElementById('resetFormBtn');
+
+    if (!form || !successMsg) return;
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      let isValid = true;
+
+      const nom = (document.getElementById('contactNom') as HTMLInputElement).value.trim();
+      const tel = (document.getElementById('contactTel') as HTMLInputElement).value.trim();
+      const email = (document.getElementById('contactEmail') as HTMLInputElement).value.trim();
+      const postal = (document.getElementById('contactPostal') as HTMLInputElement).value.trim();
+      const intervention = (document.getElementById('contactIntervention') as HTMLSelectElement).value;
+      const message = (document.getElementById('contactMessage') as HTMLTextAreaElement).value.trim();
+
+      // Errors
+      const errNom = document.getElementById('errNom');
+      const errTel = document.getElementById('errTel');
+      const errEmail = document.getElementById('errEmail');
+      const errPostal = document.getElementById('errPostal');
+      const errIntervention = document.getElementById('errIntervention');
+      const errMessage = document.getElementById('errMessage');
+
+      if (errNom) errNom.textContent = nom ? '' : 'Veuillez renseigner votre nom complet.';
+      if (!nom) isValid = false;
+
+      if (errTel) errTel.textContent = tel.length >= 8 ? '' : 'Veuillez saisir un numéro de téléphone valide.';
+      if (tel.length < 8) isValid = false;
+
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (errEmail) errEmail.textContent = emailRegex.test(email) ? '' : 'Veuillez saisir une adresse courriel valide.';
+      if (!emailRegex.test(email)) isValid = false;
+
+      if (errPostal) errPostal.textContent = postal ? '' : 'Veuillez préciser votre commune ou code postal belge.';
+      if (!postal) isValid = false;
+
+      if (errIntervention) errIntervention.textContent = intervention ? '' : 'Veuillez sélectionner un type d\'intervention.';
+      if (!intervention) isValid = false;
+
+      if (errMessage) errMessage.textContent = message.length >= 10 ? '' : 'Veuillez décrire brièvement votre situation (min. 10 caractères).';
+      if (message.length < 10) isValid = false;
+
+      if (isValid) {
+        form.style.display = 'none';
+        successMsg.style.display = 'block';
+      }
+    });
+
+    if (resetBtn) {
+      resetBtn.addEventListener('click', () => {
+        form.reset();
+        form.style.display = 'block';
+        successMsg.style.display = 'none';
+      });
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', setupContactForm);
+  setupContactForm();
+</script>

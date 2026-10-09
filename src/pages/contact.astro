@@ -1,0 +1,388 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ContactForm from '../components/ContactForm.astro';
+---
+
+<Layout
+  title="Contact et Devis Plomberie en Belgique"
+  description="Contactez Novario Project: permanence d'urgence 24/7 au +32 470 12 34 56 ou demande de devis en ligne. Artisans plombiers chauffagistes agréés à Bruxelles et en Wallonie."
+  currentPath="/contact"
+>
+  <!-- Page Header -->
+  <section class="page-intro technical-grid">
+    <div class="container">
+      <div class="page-intro-content">
+        <span class="badge badge-copper">Permanence 24/7 Ouverte</span>
+        <h1>Contact et Demande d'Intervention</h1>
+        <p class="page-intro-lead">
+          En cas d'urgence hydraulique ou de panne de chaudière, nos techniciens se mobilisent immédiatement. Pour vos travaux sanitaires planifiés, nous établissons un devis écrit gratuit sous 24 à 48 heures.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Emergency Highlight Box -->
+  <section class="emergency-strip">
+    <div class="container">
+      <div class="emergency-callout-card">
+        <div class="callout-left">
+          <div class="callout-status">
+            <span class="pulse-dot"></span>
+            <span class="callout-status-text">URGENCE ACTIVE (24h/24 et 7j/7)</span>
+          </div>
+          <h2>Fuite d'eau, canalisation rompue ou inondation ?</h2>
+          <p>
+            Coupez immédiatement votre compteur général d'eau et contactez notre ligne d'astreinte directe pour un départ immédiat du technicien le plus proche.
+          </p>
+        </div>
+        <div class="callout-right">
+          <a href="tel:+32470123456" class="btn btn-emergency btn-lg hotline-btn">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            +32 470 12 34 56
+          </a>
+          <span class="callout-sub">Décroché direct par un technicien de garde</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Form & Details Grid -->
+  <section class="section">
+    <div class="container">
+      <div class="contact-main-grid">
+        <div class="form-column">
+          <div class="column-intro">
+            <span class="badge badge-copper">Formulaire Officiel</span>
+            <h2>Demande de Devis ou Rendez-Vous</h2>
+            <p>
+              Remplissez les détails de votre problème ou projet ci-dessous. Nous vous rappelons sous 15 minutes en journée.
+            </p>
+          </div>
+
+          <ContactForm />
+        </div>
+
+        <div class="info-column">
+          <div class="info-card">
+            <h3>Coordonnées Directes</h3>
+            <ul class="info-list">
+              <li>
+                <span class="info-label">Ligne d'astreinte 24/7:</span>
+                <a href="tel:+32470123456" class="info-val-highlight">+32 470 12 34 56</a>
+              </li>
+              <li>
+                <span class="info-label">Bureaux & Devis généraux:</span>
+                <a href="tel:+3228994321" class="info-val">+32 2 899 43 21</a>
+              </li>
+              <li>
+                <span class="info-label">Courriel professionnel:</span>
+                <a href="mailto:contact@novarioproject.be" class="info-val">contact@novarioproject.be</a>
+              </li>
+            </ul>
+
+            <div class="info-divider"></div>
+
+            <h3>Adresses en Belgique</h3>
+            <div class="office-box">
+              <span class="office-name">Siège et Permanence Bruxelles</span>
+              <span class="office-address">Avenue Louise 367, 1050 Bruxelles</span>
+            </div>
+            <div class="office-box">
+              <span class="office-name">Antenne Technique Brabant Wallon</span>
+              <span class="office-address">Chaussée de Bruxelles 142, 1410 Waterloo</span>
+            </div>
+
+            <div class="info-divider"></div>
+
+            <h3>Horaires de Disponibilité</h3>
+            <div class="hours-row">
+              <span class="hours-label">Bureaux administratifs:</span>
+              <span class="hours-val">Lun - Ven : 08h00 à 18h30</span>
+            </div>
+            <div class="hours-row">
+              <span class="hours-label">Permanence dépannage:</span>
+              <span class="hours-val text-copper">24h/24, 7j/7 toute l'année</span>
+            </div>
+
+            <div class="info-divider"></div>
+
+            <div class="legal-snippet">
+              <span class="legal-title">Identité Fiscale Belge:</span>
+              <span class="legal-desc">Novario Project SRL</span>
+              <span class="legal-desc">Numéro BCE / TVA : BE 0798.412.385</span>
+              <span class="legal-desc">Agrément Cerga N° 04-0982-G | Habilitation PEB TC-0491-RW</span>
+            </div>
+          </div>
+
+          <div class="insurance-card">
+            <div class="ins-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+            </div>
+            <div class="ins-content">
+              <h4>Agréé Compagnies d'Assurance</h4>
+              <p>
+                Nos factures détaillées et rapports de recherche de fuite sont rédigés selon les normes acceptées par l'ensemble des assureurs en Belgique (Ethias, AXA, AG Insurance, Belfius, CBC, Allianz).
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .page-intro {
+    padding: 4.5rem 0 3.5rem;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .page-intro-content {
+    max-width: 820px;
+  }
+
+  .page-intro-content h1 {
+    color: #ffffff;
+    margin: 1rem 0;
+  }
+
+  .page-intro-lead {
+    font-size: 1.15rem;
+    color: var(--text-muted);
+  }
+
+  /* Emergency Strip */
+  .emergency-strip {
+    background-color: #070b12;
+    padding: 2rem 0;
+    border-bottom: 1px solid var(--border-medium);
+  }
+
+  .emergency-callout-card {
+    background: linear-gradient(90deg, #181112 0%, #161824 100%);
+    border: 1px solid rgba(220, 38, 38, 0.4);
+    border-radius: var(--radius-xl);
+    padding: 2.25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .callout-status {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .callout-status-text {
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    color: #f87171;
+  }
+
+  .callout-left h2 {
+    color: #ffffff;
+    font-size: 1.45rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .callout-left p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    max-width: 600px;
+  }
+
+  .callout-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    flex-shrink: 0;
+  }
+
+  .hotline-btn {
+    font-size: 1.25rem;
+    padding: 1.1rem 2.25rem;
+  }
+
+  .callout-sub {
+    font-size: 0.75rem;
+    color: var(--text-subtle);
+  }
+
+  /* Contact Main Grid */
+  .contact-main-grid {
+    display: grid;
+    grid-template-columns: 1.45fr 1fr;
+    gap: 3.5rem;
+    align-items: start;
+  }
+
+  .column-intro {
+    margin-bottom: 2rem;
+  }
+
+  .column-intro h2 {
+    color: #ffffff;
+    margin: 0.75rem 0 0.5rem;
+    font-size: 1.85rem;
+  }
+
+  .info-column {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+  }
+
+  .info-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-medium);
+    border-radius: var(--radius-xl);
+    padding: 2.25rem;
+  }
+
+  .info-card h3 {
+    color: #ffffff;
+    font-size: 1.15rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .info-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .info-label {
+    display: block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-subtle);
+    margin-bottom: 0.2rem;
+  }
+
+  .info-val {
+    color: var(--text-main);
+    font-weight: 600;
+    font-size: 1.05rem;
+  }
+
+  .info-val-highlight {
+    color: #fca5a5;
+    font-weight: 700;
+    font-size: 1.25rem;
+    letter-spacing: 0.02em;
+  }
+
+  .info-divider {
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.06);
+    margin: 1.5rem 0;
+  }
+
+  .office-box {
+    margin-bottom: 1rem;
+  }
+
+  .office-name {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #ffffff;
+  }
+
+  .office-address {
+    display: block;
+    font-size: 0.88rem;
+    color: var(--text-muted);
+  }
+
+  .hours-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.88rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .hours-label {
+    color: var(--text-muted);
+  }
+
+  .hours-val {
+    font-weight: 600;
+  }
+
+  .legal-snippet {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    font-size: 0.8rem;
+  }
+
+  .legal-title {
+    color: #ffffff;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+  }
+
+  .legal-desc {
+    color: var(--text-muted);
+  }
+
+  .insurance-card {
+    background-color: var(--bg-card);
+    border: 1px solid rgba(16, 185, 129, 0.25);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .ins-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-sm);
+    background-color: rgba(16, 185, 129, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .ins-content h4 {
+    color: #ffffff;
+    font-size: 1rem;
+    margin-bottom: 0.35rem;
+  }
+
+  .ins-content p {
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+
+  @media (max-width: 992px) {
+    .emergency-callout-card {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .callout-right {
+      width: 100%;
+    }
+    .hotline-btn {
+      width: 100%;
+    }
+    .contact-main-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

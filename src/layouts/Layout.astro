@@ -1,0 +1,102 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+  currentPath?: string;
+}
+
+const {
+  title,
+  description = "Novario Project: Entreprise générale de plomberie et chauffage en Belgique. Dépannage urgent 24/7, recherche de fuite, agréé Cerga et PEB à Bruxelles et en Wallonie.",
+  currentPath = Astro.url.pathname,
+} = Astro.props;
+
+const canonicalURL = new URL(currentPath, 'https://novarioproject.be');
+
+const schemaData = {
+  "@context": "https://schema.org",
+  "@type": "Plumber",
+  "name": "Novario Project",
+  "image": "https://novarioproject.be/images/hero-craftsmanship.jpg",
+  "telephone": "+3228994321",
+  "emergencyTelephone": "+32470123456",
+  "url": "https://novarioproject.be",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Avenue Louise 367",
+    "addressLocality": "Bruxelles",
+    "postalCode": "1050",
+    "addressCountry": "BE"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 50.8227,
+    "longitude": 4.3683
+  },
+  "areaServed": [
+    { "@type": "City", "name": "Bruxelles" },
+    { "@type": "AdministrativeArea", "name": "Brabant Wallon" },
+    { "@type": "AdministrativeArea", "name": "Province de Namur" },
+    { "@type": "AdministrativeArea", "name": "Province de Liège" },
+    { "@type": "AdministrativeArea", "name": "Province de Hainaut" }
+  ],
+  "priceRange": "€€",
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "08:00",
+      "closes": "18:30"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      "opens": "00:00",
+      "closes": "23:59"
+    }
+  ]
+};
+---
+
+<!doctype html>
+<html lang="fr-BE">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title} | Novario Project Belgique</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={`${title} | Novario Project`} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="https://novarioproject.be/images/hero-craftsmanship.jpg" />
+    <meta property="og:locale" content="fr_BE" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonicalURL} />
+    <meta property="twitter:title" content={`${title} | Novario Project`} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content="https://novarioproject.be/images/hero-craftsmanship.jpg" />
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json" set:html={JSON.stringify(schemaData)} />
+  </head>
+  <body>
+    <Header currentPath={currentPath} />
+    <main id="main-content">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

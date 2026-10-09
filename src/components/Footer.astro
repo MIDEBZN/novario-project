@@ -1,0 +1,278 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="footer-top">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col brand-col">
+          <div class="footer-logo">
+            <svg width="32" height="32" viewBox="0 0 48 48" fill="none">
+              <rect width="48" height="48" rx="8" fill="#131b27" stroke="rgba(255,255,255,0.15)"/>
+              <path d="M12 36V12L24 24V36" stroke="#c2612d" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M24 12V24L36 36V12" stroke="#f8fafc" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="24" cy="24" r="3" fill="#c2612d"/>
+            </svg>
+            <span class="footer-brand-title">NOVARIO <span class="accent">PROJECT</span></span>
+          </div>
+          <p class="footer-desc">
+            Entreprise générale de plomberie sanitaire, recherche de fuite et génie thermique en Belgique. Dépannage urgent 24h/24 et rénovations certifiées selon les normes belges les plus exigeantes.
+          </p>
+          <div class="credentials-badges">
+            <span class="cred-badge">Agrément Cerga Gaz</span>
+            <span class="cred-badge">Habilitation PEB</span>
+            <span class="cred-badge">Garantie Décennale</span>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h3 class="footer-title">Prestations</h3>
+          <ul class="footer-links">
+            <li><a href="/services#depannage">Dépannage d'urgence 24/7</a></li>
+            <li><a href="/services#recherche-fuite">Recherche de fuite non destructive</a></li>
+            <li><a href="/services#debouchage">Débouchage haute pression</a></li>
+            <li><a href="/services#chauffage">Entretien chaudière PEB</a></li>
+            <li><a href="/services#chauffe-eau">Chauffe-eau et boiler électrique</a></li>
+            <li><a href="/services#sanitaire">Rénovation salle de bain clé en main</a></li>
+            <li><a href="/services#adoucisseur">Adoucisseurs d'eau anti-calcaire</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3 class="footer-title">Zones d'Intervention</h3>
+          <ul class="footer-links">
+            <li><a href="/locations#bruxelles">Bruxelles-Capitale (19 communes)</a></li>
+            <li><a href="/locations#brabant-wallon">Brabant Wallon (Wavre, Waterloo, Braine)</a></li>
+            <li><a href="/locations#namur">Province de Namur et périphérie</a></li>
+            <li><a href="/locations#liege">Province de Liège</a></li>
+            <li><a href="/locations#hainaut">Hainaut (Charleroi, Mons, Tournai)</a></li>
+            <li><a href="/locations">Voir tous les codes postaux desservis</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col contact-col">
+          <h3 class="footer-title">Permanence et Siège</h3>
+          <ul class="contact-details">
+            <li>
+              <span class="contact-label">Intervention urgente 24/7:</span>
+              <a href="tel:+32470123456" class="contact-highlight">+32 470 12 34 56</a>
+            </li>
+            <li>
+              <span class="contact-label">Bureaux et devis:</span>
+              <a href="tel:+3228994321">+32 2 899 43 21</a>
+            </li>
+            <li>
+              <span class="contact-label">Courriel:</span>
+              <a href="mailto:contact@novarioproject.be">contact@novarioproject.be</a>
+            </li>
+            <li>
+              <span class="contact-label">Adresses en Belgique:</span>
+              <span class="address-text">Avenue Louise 367, 1050 Bruxelles</span>
+              <span class="address-text">Chaussée de Bruxelles 142, 1410 Waterloo</span>
+            </li>
+            <li>
+              <span class="contact-label">BCE / Numéro TVA:</span>
+              <span class="bce-text">BE 0798.412.385</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="container footer-bottom-inner">
+      <div class="copyright">
+        © {currentYear} Novario Project SRL. Tous droits réservés. Agréé compagnies d'assurance belges.
+      </div>
+      <div class="tax-info">
+        Taux de TVA belge: 6% pour habitations privées de plus de 10 ans, 21% pour constructions neuves.
+      </div>
+      <div class="footer-legal-links">
+        <a href="/about">Mentions Légales</a>
+        <a href="/about">Garantie Décennale</a>
+        <a href="/contact">Formulaire Devis</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background-color: #070a10;
+    border-top: 1px solid var(--border-medium);
+    margin-top: auto;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+  }
+
+  .footer-top {
+    padding: 4.5rem 0 3.5rem;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1.3fr;
+    gap: 3rem;
+  }
+
+  .footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .footer-brand-title {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: -0.01em;
+  }
+
+  .footer-brand-title .accent {
+    color: var(--copper-light);
+  }
+
+  .footer-desc {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    color: var(--text-muted);
+  }
+
+  .credentials-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .cred-badge {
+    display: inline-block;
+    padding: 0.25rem 0.6rem;
+    background-color: var(--bg-tertiary);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-sm);
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: #cbd5e1;
+    letter-spacing: 0.02em;
+  }
+
+  .footer-title {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 1.25rem;
+    letter-spacing: 0.01em;
+  }
+
+  .footer-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+  }
+
+  .footer-links a {
+    color: var(--text-muted);
+    transition: color var(--transition-fast);
+    font-size: 0.88rem;
+  }
+
+  .footer-links a:hover {
+    color: var(--copper-light);
+    padding-left: 2px;
+  }
+
+  .contact-details {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+
+  .contact-label {
+    display: block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-subtle);
+    margin-bottom: 0.15rem;
+  }
+
+  .contact-highlight {
+    color: #fca5a5;
+    font-weight: 700;
+    font-size: 1.05rem;
+  }
+
+  .address-text {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--text-main);
+  }
+
+  .bce-text {
+    font-family: monospace;
+    color: var(--copper-light);
+    font-weight: 600;
+    font-size: 0.85rem;
+  }
+
+  .footer-bottom {
+    background-color: #04060a;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 1.5rem 0;
+    font-size: 0.8rem;
+    color: var(--text-subtle);
+  }
+
+  .footer-bottom-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .tax-info {
+    font-size: 0.76rem;
+    color: #64748b;
+  }
+
+  .footer-legal-links {
+    display: flex;
+    gap: 1.25rem;
+  }
+
+  .footer-legal-links a {
+    color: var(--text-muted);
+  }
+
+  .footer-legal-links a:hover {
+    color: #ffffff;
+  }
+
+  @media (max-width: 992px) {
+    .footer-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .footer-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    .footer-bottom-inner {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.75rem;
+    }
+  }
+</style>

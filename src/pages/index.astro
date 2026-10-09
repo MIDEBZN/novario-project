@@ -1,0 +1,860 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CostEstimator from '../components/CostEstimator.astro';
+import FaqAccordion from '../components/FaqAccordion.astro';
+---
+
+<Layout
+  title="Plomberie et Chauffage d'Excellence en Belgique"
+  description="Novario Project: Artisan plombier chauffagiste certifié en Belgique. Dépannage urgent 24/7, recherche de fuite non destructive et rénovation sanitaire à Bruxelles et en Wallonie."
+  currentPath="/"
+>
+  <!-- Hero Section -->
+  <section class="hero-section technical-grid">
+    <div class="container hero-container">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="badge badge-copper">
+            <span class="pulse-dot"></span>
+            Astreinte Dépannage Active en Belgique
+          </span>
+        </div>
+
+        <h1 class="hero-title">
+          L'artisanat de précision pour votre plomberie et chauffage.
+        </h1>
+
+        <p class="hero-lead">
+          Interventions d'urgence en 35 à 50 minutes, recherche de fuite non destructive par imagerie thermique, et rénovations sanitaires d'exception à Bruxelles, dans le Brabant Wallon et en Wallonie.
+        </p>
+
+        <div class="hero-actions">
+          <a href="tel:+32470123456" class="btn btn-emergency btn-lg">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            Appeler l'astreinte 24/7
+          </a>
+          <a href="#estimateur" class="btn btn-secondary btn-lg">
+            Calculer un devis
+          </a>
+        </div>
+
+        <div class="hero-trust-bar">
+          <div class="trust-item">
+            <span class="trust-val">35 min</span>
+            <span class="trust-lbl">Délai moyen constaté</span>
+          </div>
+          <div class="trust-sep"></div>
+          <div class="trust-item">
+            <span class="trust-val">Cerga & PEB</span>
+            <span class="trust-lbl">Agréments officiels</span>
+          </div>
+          <div class="trust-sep"></div>
+          <div class="trust-item">
+            <span class="trust-val">TVA 6%</span>
+            <span class="trust-lbl">Logements de plus de 10 ans</span>
+          </div>
+          <div class="trust-sep"></div>
+          <div class="trust-item">
+            <span class="trust-val">100% Agréé</span>
+            <span class="trust-lbl">Assurances belges</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-image-frame">
+          <img
+            src="/images/hero-craftsmanship.jpg"
+            alt="Artisanat de précision et tuyauterie cuivre Novario Project"
+            width="1200"
+            height="675"
+            loading="eager"
+          />
+          <div class="visual-tag">
+            <span class="visual-tag-title">Chantier de référence Bruxelles</span>
+            <span class="visual-tag-desc">Collecteurs cuivre sertis, équilibrage dynamique et vannes thermiques</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Live Status Bar -->
+  <section class="live-status-bar">
+    <div class="container status-inner">
+      <div class="status-left">
+        <span class="status-live-dot"></span>
+        <span class="status-strong">État de disponibilité actuel:</span>
+        <span class="status-text">Équipes opérationnelles à Bruxelles-Capitale, Brabant Wallon, Liège, Namur et Hainaut</span>
+      </div>
+      <div class="status-right">
+        <span class="status-contact-txt">Permanence directe:</span>
+        <a href="tel:+3228994321" class="status-link">+32 2 899 43 21</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Bento Grid -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="badge badge-copper">Nos Domaines d'Expertise</span>
+        <h2>Services Techniques et Sanitaires</h2>
+        <p>
+          Du dépannage sous pression à la réfection complète de votre réseau hydraulique, nos artisans appliquent les règles de l'art belges (normes NBN et prescriptions Cerga).
+        </p>
+      </div>
+
+      <div class="grid-3">
+        <div class="card card-highlight">
+          <div class="service-icon-box">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+            </svg>
+          </div>
+          <h3>Dépannage d'Urgence 24/7</h3>
+          <p>
+            Rupture de canalisation, fuite après compteur, surpression, gel ou robinet d'arrêt bloqué. Arrivée rapide avec outillage complet pour sécurisation immédiate.
+          </p>
+          <ul class="card-features">
+            <li>Intervention sous 35 à 50 minutes</li>
+            <li>Sécurisation du réseau Vivaqua ou SWDE</li>
+            <li>Forfait clair annoncé avant travaux</li>
+          </ul>
+          <a href="/services#depannage" class="card-link">Consulter les forfaits urgence &rarr;</a>
+        </div>
+
+        <div class="card">
+          <div class="service-icon-box">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="22" y1="12" x2="18" y2="12"/>
+              <line x1="6" y1="12" x2="2" y2="12"/>
+              <line x1="12" y1="6" x2="12" y2="2"/>
+              <line x1="12" y1="22" x2="12" y2="18"/>
+            </svg>
+          </div>
+          <h3>Recherche de Fuite Non Destructive</h3>
+          <p>
+            Localisation précise des fuites invisibles sans casser vos sols ni vos cloisons via thermographie infrarouge, gaz traceur hydrogéné et corrélation acoustique.
+          </p>
+          <ul class="card-features">
+            <li>Détection acoustique et caméra endoscopique</li>
+            <li>Rapport technique officiel pour votre assurance</li>
+            <li>Prise en charge intégrale fréquente par assurance</li>
+          </ul>
+          <a href="/services#recherche-fuite" class="card-link">Détails de la détection &rarr;</a>
+        </div>
+
+        <div class="card">
+          <div class="service-icon-box">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+            </svg>
+          </div>
+          <h3>Débouchage & Hydrocurage</h3>
+          <p>
+            Débouchage mécanique à spirale et curage hydrodynamique haute pression pour canalisations privées, sterputs, WC suspendus et colonnes collectives.
+          </p>
+          <ul class="card-features">
+            <li>Inspection vidéo par caméra couleur</li>
+            <li>Dégorgement complet sans solvant agressif</li>
+            <li>Assainissement des colonnes d'évacuation</li>
+          </ul>
+          <a href="/services#debouchage" class="card-link">Voir le débouchage &rarr;</a>
+        </div>
+
+        <div class="card">
+          <div class="service-icon-box">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/>
+            </svg>
+          </div>
+          <h3>Chauffage & Chaudières PEB</h3>
+          <p>
+            Entretien légal obligatoire des chaudières gaz et mazout, désembouage des circuits de radiateurs, purge et équilibrage thermique de votre installation.
+          </p>
+          <ul class="card-features">
+            <li>Attestation PEB officielle Wallonie et Bruxelles</li>
+            <li>Agrément Cerga habilité gaz</li>
+            <li>Réglage optimal de combustion et économie d'énergie</li>
+          </ul>
+          <a href="/services#chauffage" class="card-link">Entretien PEB chaudières &rarr;</a>
+        </div>
+
+        <div class="card">
+          <div class="service-icon-box">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="4" y="2" width="16" height="20" rx="2"/>
+              <line x1="8" y1="6" x2="16" y2="6"/>
+              <line x1="12" y1="18" x2="12.01" y2="18"/>
+            </svg>
+          </div>
+          <h3>Chauffe-Eau & Boilers</h3>
+          <p>
+            Remplacement d'urgence ou installation neuve de ballons d'eau chaude, boilers thermodynamiques à haute efficacité et chauffe-bains instantanés au gaz.
+          </p>
+          <ul class="card-features">
+            <li>Marques reconnues: Bulex, Vaillant, Ariston, ACV</li>
+            <li>Détartrage chimique et remplacement anode</li>
+            <li>Garantie cuve 5 ans et pièces 2 ans</li>
+          </ul>
+          <a href="/services#chauffe-eau" class="card-link">Découvrir les modèles &rarr;</a>
+        </div>
+
+        <div class="card">
+          <div class="service-icon-box">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+            </svg>
+          </div>
+          <h3>Traitement de l'Eau & Adoucisseurs</h3>
+          <p>
+            L'eau belge est particulièrement calcaire (25 à 35 degrés français). Protégez vos tuyauteries et robinetteries grâce aux adoucisseurs volumétriques compacts.
+          </p>
+          <ul class="card-features">
+            <li>Préservation de vos appareils ménagers</li>
+            <li>Adoucisseurs sans électricité ou connectés</li>
+            <li>Entretien annuel et livraison de sel purifié</li>
+          </ul>
+          <a href="/services#adoucisseur" class="card-link">Solutions anticalcaire &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Estimateur Section -->
+  <section class="section" style="background-color: var(--bg-secondary);">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="badge badge-copper">Estimation Sans Engagement</span>
+        <h2>Calculez le Coût de Votre Intervention</h2>
+        <p>
+          Transparence absolue: nos tarifs respectent le barème officiel avec distinction automatique des régimes de TVA belge.
+        </p>
+      </div>
+
+      <CostEstimator />
+    </div>
+  </section>
+
+  <!-- Visual Showcase / Real Craftsmanship Section -->
+  <section class="section">
+    <div class="container">
+      <div class="showcase-grid">
+        <div class="showcase-card">
+          <div class="showcase-img-wrap">
+            <img
+              src="/images/sanitary-renovation.jpg"
+              alt="Rénovation sanitaire haut de gamme à Bruxelles"
+              width="800"
+              height="450"
+              loading="lazy"
+            />
+          </div>
+          <div class="showcase-details">
+            <span class="showcase-tag">Rénovation Clé en Main</span>
+            <h3>Sanitaires d'exception et finitions soignées</h3>
+            <p>
+              Création complète de salles d'eau avec douches à l'italienne, canalisations encastrées en multicouche isolé, robinetterie encastrée thermostatique et receveurs sur mesure.
+            </p>
+            <a href="/services#sanitaire" class="btn btn-secondary btn-sm">Voir nos réalisations sanitaires</a>
+          </div>
+        </div>
+
+        <div class="showcase-card">
+          <div class="showcase-img-wrap">
+            <img
+              src="/images/heating-installation.jpg"
+              alt="Installation chaufferie et collecteurs de distribution"
+              width="800"
+              height="450"
+              loading="lazy"
+            />
+          </div>
+          <div class="showcase-details">
+            <span class="showcase-tag">Génie Thermique</span>
+            <h3>Chaufferies modernes et gestion thermique</h3>
+            <p>
+              Installation de chaudières à condensation haute performance, pompes à chaleur, circuits d'équilibrage et vases d'expansion conformes aux exigences PEB régionales.
+            </p>
+            <a href="/services#chauffage" class="btn btn-secondary btn-sm">Consulter le pôle thermique</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Steps -->
+  <section class="section" style="background-color: #080d14;">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="badge badge-copper">Notre Protocole</span>
+        <h2>Une Intervention Méthodique en 4 Étapes</h2>
+        <p>
+          Pas d'improvisation: chaque intervention Novario Project suit une procédure rigoureuse pour votre sérénité.
+        </p>
+      </div>
+
+      <div class="grid-4">
+        <div class="step-card">
+          <div class="step-num">01</div>
+          <h4>Diagnostic Précis</h4>
+          <p>
+            Écoute téléphonique ou inspection sur site pour identifier la source exacte de la défaillance hydraulique ou thermique.
+          </p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-num">02</div>
+          <h4>Validation du Devis</h4>
+          <p>
+            Annonce préalable du coût avant tout coup d'outil. Vous validez le devis détaillé sans aucune mauvaise surprise finale.
+          </p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-num">03</div>
+          <h4>Exécution Soignée</h4>
+          <p>
+            Remplacement ou réparation avec des pièces d'origine certifiées et protection rigoureuse de vos sols et mobilier.
+          </p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-num">04</div>
+          <h4>Rapport & Garantie</h4>
+          <p>
+            Remise de votre attestation de conformité, attestation PEB si applicable, et rapport photographique pour votre assureur.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Belgian Customer Reviews -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="badge badge-copper">Retours d'Expérience</span>
+        <h2>La Confiance de nos Clients en Belgique</h2>
+        <p>
+          Avis vérifiés de résidents et gestionnaires de copropriétés à Bruxelles et en Wallonie.
+        </p>
+      </div>
+
+      <div class="grid-3">
+        <div class="review-card">
+          <div class="review-stars">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#d97706"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#d97706"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#d97706"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#d97706"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#d97706"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <p class="review-text">
+            "Fuite importante un dimanche matin sous le plancher de notre maison de maître à Uccle. Arrivée du technicien en 35 minutes chrono. Diagnostic à la caméra thermique sans rien abîmer, réparation immédiate et rapport impeccable pour notre compagnie d'assurance."
+          </p>
+          <div class="reviewer-meta">
+            <span class="reviewer-name">Dr. Marc L.</span>
+            <span class="reviewer-loc">Uccle (Bruxelles)</span>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#d97706"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#d97706"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#d97706"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#d97706"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#d97706"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <p class="review-text">
+            "Remplacement complet de notre chaudière gaz par un modèle Bulex à condensation à Waterloo. Devis clair avec application directe du taux de TVA à 6% pour notre maison de plus de 10 ans. Chantier rendu d'une propreté remarquable."
+          </p>
+          <div class="reviewer-meta">
+            <span class="reviewer-name">Sophie V.</span>
+            <span class="reviewer-loc">Waterloo (Brabant Wallon)</span>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#d97706"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#d97706"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#d97706"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#d97706"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#d97706"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <p class="review-text">
+            "Syndic de copropriété à Namur. Novario Project gère les interventions d'urgence et le contrôle PEB de nos immeubles. Réactivité exemplaire, techniciens polis et attestations Cerga transmises systématiquement sous 24h."
+          </p>
+          <div class="reviewer-meta">
+            <span class="reviewer-name">Jean-Paul H.</span>
+            <span class="reviewer-loc">Namur Centre</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section" style="background-color: var(--bg-secondary);">
+    <div class="container" style="max-width: 860px;">
+      <div class="section-header text-center">
+        <span class="badge badge-copper">Questions Fréquentes</span>
+        <h2>Vos Questions sur la Plomberie en Belgique</h2>
+        <p>
+          Tout ce que vous devez savoir sur la réglementation, les assurances et nos modalités d'intervention.
+        </p>
+      </div>
+
+      <FaqAccordion />
+    </div>
+  </section>
+
+  <!-- Final CTA Section -->
+  <section class="section cta-section">
+    <div class="container">
+      <div class="cta-card">
+        <div class="cta-content">
+          <span class="badge badge-live">Permanence Ouverte</span>
+          <h2>Un problème de plomberie ou un projet sanitaire ?</h2>
+          <p>
+            Nos artisans qualifiés se déplacent à Bruxelles, dans le Brabant Wallon et dans toute la Wallonie. Diagnostic immédiat et devis gratuit.
+          </p>
+          <div class="cta-actions">
+            <a href="tel:+32470123456" class="btn btn-emergency btn-lg">
+              Appel d'urgence: +32 470 12 34 56
+            </a>
+            <a href="/contact" class="btn btn-primary btn-lg">
+              Demander un devis en ligne
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  /* Hero */
+  .hero-section {
+    padding-top: 5rem;
+    padding-bottom: 5.5rem;
+    border-bottom: 1px solid var(--border-subtle);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-container {
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    gap: 3.5rem;
+    align-items: center;
+  }
+
+  .hero-badge {
+    margin-bottom: 1.25rem;
+  }
+
+  .hero-title {
+    color: #ffffff;
+    margin-bottom: 1.25rem;
+  }
+
+  .hero-lead {
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    margin-bottom: 2.25rem;
+    line-height: 1.6;
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 3rem;
+  }
+
+  .hero-trust-bar {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-subtle);
+    flex-wrap: wrap;
+  }
+
+  .trust-item {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .trust-val {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #ffffff;
+  }
+
+  .trust-lbl {
+    font-size: 0.75rem;
+    color: var(--text-subtle);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .trust-sep {
+    width: 1px;
+    height: 32px;
+    background-color: var(--border-medium);
+  }
+
+  .hero-visual {
+    position: relative;
+  }
+
+  .hero-image-frame {
+    position: relative;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    border: 1px solid var(--border-medium);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .hero-image-frame img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+  }
+
+  .visual-tag {
+    position: absolute;
+    bottom: 1.25rem;
+    left: 1.25rem;
+    right: 1.25rem;
+    padding: 1rem 1.25rem;
+    background-color: rgba(11, 15, 23, 0.88);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: var(--radius-md);
+  }
+
+  .visual-tag-title {
+    display: block;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .visual-tag-desc {
+    display: block;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+  }
+
+  /* Live Status Bar */
+  .live-status-bar {
+    background-color: #0d141e;
+    border-bottom: 1px solid var(--border-subtle);
+    padding: 0.85rem 0;
+    font-size: 0.85rem;
+  }
+
+  .status-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .status-left {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .status-live-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #10b981;
+    border-radius: 50%;
+    box-shadow: 0 0 6px #10b981;
+  }
+
+  .status-strong {
+    color: #ffffff;
+    font-weight: 700;
+  }
+
+  .status-text {
+    color: var(--text-muted);
+  }
+
+  .status-right {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .status-contact-txt {
+    color: var(--text-subtle);
+  }
+
+  .status-link {
+    color: var(--copper-light);
+    font-weight: 700;
+  }
+
+  /* Service Card details */
+  .service-icon-box {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-md);
+    background-color: var(--bg-tertiary);
+    border: 1px solid var(--border-medium);
+    color: var(--copper-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .card h3 {
+    margin-bottom: 0.75rem;
+    color: #ffffff;
+  }
+
+  .card-features {
+    list-style: none;
+    margin: 1.25rem 0 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+
+  .card-features li::before {
+    content: "•";
+    color: var(--copper-light);
+    margin-right: 0.5rem;
+    font-weight: bold;
+  }
+
+  .card-link {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--copper-light);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+  }
+
+  .card-link:hover {
+    color: #ffffff;
+  }
+
+  /* Showcase Grid */
+  .showcase-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+  }
+
+  .showcase-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .showcase-img-wrap {
+    aspect-ratio: 16/9;
+    overflow: hidden;
+  }
+
+  .showcase-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+
+  .showcase-card:hover .showcase-img-wrap img {
+    transform: scale(1.03);
+  }
+
+  .showcase-details {
+    padding: 2.25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .showcase-tag {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--copper-light);
+    font-weight: 700;
+  }
+
+  .showcase-details h3 {
+    color: #ffffff;
+    font-size: 1.35rem;
+  }
+
+  .showcase-details p {
+    font-size: 0.95rem;
+    margin-bottom: 0.75rem;
+  }
+
+  /* Process Steps */
+  .step-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    padding: 2rem 1.5rem;
+    position: relative;
+  }
+
+  .step-num {
+    font-family: var(--font-display);
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: rgba(194, 97, 45, 0.35);
+    margin-bottom: 0.75rem;
+    line-height: 1;
+  }
+
+  .step-card h4 {
+    font-size: 1.15rem;
+    color: #ffffff;
+    margin-bottom: 0.6rem;
+  }
+
+  .step-card p {
+    font-size: 0.88rem;
+    line-height: 1.6;
+  }
+
+  /* Reviews */
+  .review-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .review-stars {
+    display: flex;
+    gap: 0.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .review-text {
+    font-size: 0.92rem;
+    color: var(--text-main);
+    font-style: italic;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+
+  .reviewer-meta {
+    display: flex;
+    flex-direction: column;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .reviewer-name {
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 0.9rem;
+  }
+
+  .reviewer-loc {
+    font-size: 0.78rem;
+    color: var(--copper-light);
+  }
+
+  /* CTA */
+  .cta-section {
+    padding-bottom: 6rem;
+  }
+
+  .cta-card {
+    background: radial-gradient(ellipse at top, #1b2738 0%, #0d131d 100%);
+    border: 1px solid var(--border-copper);
+    border-radius: var(--radius-xl);
+    padding: 4rem 2.5rem;
+    text-align: center;
+    box-shadow: var(--shadow-lg);
+  }
+
+  .cta-content {
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  .cta-content h2 {
+    color: #ffffff;
+    margin: 1.25rem 0 1rem;
+    font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+  }
+
+  .cta-content p {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+  }
+
+  .cta-actions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  @media (max-width: 992px) {
+    .hero-container {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+    .showcase-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .hero-actions {
+      flex-direction: column;
+    }
+    .hero-actions .btn {
+      width: 100%;
+    }
+    .cta-card {
+      padding: 2.5rem 1.5rem;
+    }
+    .cta-actions {
+      flex-direction: column;
+    }
+    .cta-actions .btn {
+      width: 100%;
+    }
+  }
+</style>
